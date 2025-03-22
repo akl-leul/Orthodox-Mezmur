@@ -23,6 +23,8 @@ function fetchPosts() {
         if (snapshot.exists()) {
             const posts = snapshot.val();
             postsContainer.innerHTML = ''; // Clear the container before displaying
+            console.log(posts); // Debugging step: check if data is coming from Firebase
+
             Object.keys(posts).forEach(postId => {
                 const post = posts[postId];
                 const postElement = document.createElement('div');
