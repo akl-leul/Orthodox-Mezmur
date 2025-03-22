@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>የኦርቶዶክስ ተዋህዶ መዝሙሮች-መነሻ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="image/OIP.jfif" type="image/x-icon">
+
+    
+    <meta property="og:title" content="የኦርቶዶክስ ተዋህዶ መዝሙሮች" />
+<meta property="og:type" content="website" /> 
+<meta property="og:image" content="image/OIP.jfif" />
+<meta property="og:description" content="የኦርቶዶክስ ተዋህዶ መዝሙሮች – መንፈሳዊ ዝማሬዎችን ያዳምጡ፣ ያግኙ እና ያጋሩ። በቤተክርስቲያን ስነ-ሥርዓት ውስጥ ተሰርተው የሚዘምሩ ቅዱሳን መዝሙሮችን ያግኙ።" />
+
+</head>
+<body>
+    <header>
+        <h1>የኦርቶዶክስ ተዋህዶ መዝሙሮች</h1>
+        
+       
+       <ul type="none" id="myTopnav" class="sidebar">
+            <li onclick="hideSidebar()"> <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></li>
+            <li><a href="index.html" >መነሻ  </a></li>
+            <li><a href="mezmurall.html" style="   
+                color: #660066; /* change this to your desired hover color */
+                text-decoration: none;
+                border-bottom: 1px solid black;
+              " >መዝሙሮች</a>
+                <li><a href="mezmur.html" class="ytlo" id="ytlo">YouTube ቻናሎች</a></li>
+            </li>
+            
+            <li><a href="contact.html">ያነጋግሩ</a></li>
+            <li><a href="about.html"> ስለ እኛ</a></li>
+           
+         </ul>
+        <ul type="none" id="myTopnav" >
+            
+            <li class="hideOnMobile"><a href="index.html" >መነሻ  </a></li>
+            <li class="hideOnMobile"><a href="mezmurall.html" style="   
+                color: #660066; /* change this to your desired hover color */
+                text-decoration: none;
+                border-bottom: 1px solid black;
+              " >መዝሙሮች</a>
+                <li class="hideOnMobile"><a href="mezmur.html" class="ytlo" id="ytlo">YouTube ቻናሎች</a></li>
+            </li>
+            <li class="hideOnMobile"><a href="contact.html">ያነጋግሩ</a></li>
+            <li class="hideOnMobile"><a href="about.html"> ስለ እኛ</a></li>
+            
+        <li class="menu-btn" id="menu-btn" onclick="showSidebar()"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></li>
+        </ul>
+        <script>
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'flex';
+                document.getElementById('menu-btn').style.display = 'none';
+            }
+            function hideSidebar(){
+                  const sidebar = document.querySelector('.sidebar');
+                sidebar.style.display = 'none';
+                document.getElementById('menu-btn').style.display = 'flex';
+            }
+        </script>
+    </header>
+    
+<br><br><br><br><br><br><br><br>
+
+<h2 style="text-align: center;"><span>የኦርቶዶክስ ተዋህዶ</span> መዝሙር </h2>
+<p style="text-align: center;">አሁን ያሉት መዝሙሮች እነኚሁና። ብዙ መዝሙሮችን በቅርቡ እንጭናለን እባኮትን በትዕግስት ይጠብቁን።</p>
+ 
+   
+      <br><br><br><br><br>
+    <section class="linelist">
+        <div class="imputs">
+            <input type="text" id="searchQuery" placeholder="Search Mezmur..." value="Orthodox Tewahdo Mezmur">
+            <button onclick="startNewSearch()">Search</button>
+        </div>
+    
+        <br>
+    <div class="line">
+        <div id="mezmurs">Loading...</div>
+        
+    </div>
+    
+    </section>
+    
+    <script>
+        const apiKey = "AIzaSyBw9mWv6NANTNdAiOrYTOPQyes7t-19P0A";  // Replace with your YouTube API Key
+        let nextPageToken = "";
+        let searchQuery = "Orthodox Tewahdo Mezmur";
+        let isLoading = false;
+
+        async function fetchMezmurs(loadMore = false) {
+            if (isLoading) return;
+            isLoading = true;
+
+            let url = `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${encodeURIComponent(searchQuery)}&type=video&key=${apiKey}`;
+            if (nextPageToken && loadMore) url += `&pageToken=${nextPageToken}`;
+
+            const response = await fetch(url);
+            const data = await response.json();
+            nextPageToken = data.nextPageToken || "";  
+            displayMezmurs(data.items, loadMore);
+
+            isLoading = false;
+        }
+
+        function displayMezmurs(videos, append = false) {
+            const container = document.getElementById("mezmurs");
+            if (!append) container.innerHTML = "";  
+
+            videos.forEach(video => {
+                const videoId = video.id.videoId;
+                const mezmurDiv = document.createElement("div");
+                mezmurDiv.classList.add("mezmur");
+                mezmurDiv.innerHTML = `<iframe width="300" height="200" src="https://www.youtube.com/embed/${videoId}" frameborder="0" allowfullscreen></iframe>`;
+                container.appendChild(mezmurDiv);
+            });
+        }
+
+        function startNewSearch() {
+            searchQuery = document.getElementById("searchQuery").value;
+            nextPageToken = "";
+            fetchMezmurs();
+        }
+
+        window.addEventListener("scroll", () => {
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 200) {
+                fetchMezmurs(true);
+            }
+        });
+
+        // Load default search on page load
+        fetchMezmurs();
+    </script>
+</body>
+</html>

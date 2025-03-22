@@ -1,7 +1,14 @@
+*{
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+}
 body{
     background-color: #f2f2f2;
     padding: 0;
     font-family: 'Open Sans', sans-serif;
+    box-sizing: border-box;
+    justify-content: center;
+    margin: 0;
 }
 header{
     background-color: #fff;
@@ -11,11 +18,14 @@ header{
     left: 0;
     position: fixed;
     box-shadow: 3px 3px 12px 0 #00699f;
+    overflow-y: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 header h1{
-    float: left;
     font-family: Georgia, serif; /* or Garamond, serif; or Open Sans, sans-serif; */
-    font-size: 36px;
+    font-size: 24px;
     color: #660066;
 }
 header ul{
@@ -32,8 +42,8 @@ header ul li a{
 }
 a {
     color: #00698f;
-    font-weight: 700; 
-    transition: all 1s ease;/* change the color of links to a blue-green color */
+    font-weight: 500; 
+    transition: all 0.5s ease;/* change the color of links to a blue-green color */
 }
 header ul li a::after{
     content:'';
@@ -66,12 +76,16 @@ section{
     width: 100%;
     color: #660066;
 }
-section .container{
-    width: 70%;
-    padding: 12px;    
+section .conatiner{
+    width: 60%;
+    padding: 12px;   
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
 }
-section .container h2{
-    font-size: 50px;
+section .conatiner h2{
+    font-size: 30px;
     margin-top: 50px;
     margin-bottom: 30px;
 }
@@ -79,7 +93,7 @@ h2 span {
     color: #F8E231; /* or any other color you prefer */
     text-decoration: double 2px #F8E231;
 }
-.container p{
+.conatiner p{
     color: #000;
     font-family: sans-serif;
     font-weight: 900;
@@ -89,16 +103,14 @@ button{
     color: #fff;
     padding: 12px;
     align-self: center;
-    text-align: center;
-    margin-left: 150px;
+    text-align: center; 
     width: 150px;
     border: none;
     cursor: pointer;
+    border-radius: 6px;
+    font-weight: 700;
 }
- button:hover{
-    box-shadow: 5px 5px 5px #32a3db;
-    font-weight: 500;
- }
+ 
  form input{
     width: 400px;
     padding: 10px;
@@ -161,19 +173,17 @@ form input:focus,  form textarea:focus{
     color: #F8E231;
 }
 footer{
-    bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
-    flex-direction: row;
- gap: 150px;
+    flex-direction: row; 
     background-color: #660066;
     color: #f2f2f2;
-    
-    position: relative;
+    justify-content: space-around;
     align-items: start;
     width: 100%;
-    padding-bottom: 10px;
+    padding-bottom: 20px; 
+}
+footer li{
+    list-style: none;
 }
 footer a{
     list-style: circle;
@@ -181,7 +191,7 @@ footer a{
     color: #fff;
 }
 footer a:hover{
-    color: #8e8e8e;
+    color: #F8E231;
 }
 img{
     transition: all 0.25s ease;
@@ -189,10 +199,7 @@ img{
     box-shadow: 0 0 21px rgba(73, 72, 72, 0.458);
     z-index: -1;
 }
-img:hover{
-    animation: none;
-}
- 
+
 .container div{
     width: 400px;
     border-radius: 6px;
@@ -218,33 +225,31 @@ iframe:hover{
     border: 2px solid #00699f;
 }
 .sidebar{
-  position: fixed;
-  top: 0;
-  right: 0;
-  height: 100vh;  
-  width: 350px;
+position: fixed;
+top: 20px;
+  height: 100vh;   
   z-index: 999;
-  background-color: white;
-  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  background-color: rgba(190, 190, 190, 0.336);
+  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
   display: none;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   justify-content: flex-start;
   backdrop-filter: blur(10px);
+  font-size: 19px;
 }
 .sidebar li{
-    width: 100%;
+    width: 80%;
 }
-.sidebar a{
-    width: 100%;
-}
+
 .menu-btn{
     display: none;float: right;
     
 }
-@media (max-width: 400px){
+@media (max-width: 768px){
     .sidebar{
         width: 100%;
+        padding: 10px;
     }
     .menu-btn{
         display: flex;
@@ -263,7 +268,7 @@ iframe:hover{
         display: flex;
     }
      header h1{
-        font-size: 20px;
+        font-size: 16px;
      }
     .hideOnMobile{
         display: none;
@@ -274,39 +279,50 @@ iframe:hover{
      section{
         display: flex;
         flex-direction: column;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
      }
-     section .container h2{
+     section .conatiner{
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+     }
+     section .conatiner h2{
         font-size: 19px;
      }
+   
      section img{
-        width: 300;
-        z-index: -1;
+        width: 100%; 
      }
      .container img{
-        width: 300px;
-        z-index: -1;
+        width: 100%; 
      }
-     iframe{
-        width: 300px;
+     
+     .sec{
+        width: 100%;
      }
     .sec #cont{
-        display: flex;
-        flex-direction: column;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
      }
      #cont div{
-        width: 350px;
+        width: 98%;
      }
      form input, form textarea{
-        width: 300px;
+        width: 90%;
      }
      form{
-        margin-left: 30px;
+        margin: 10px;
      }
-     form button{
-        margin-left: 80px;
-     }
+      
      .container{
         float: left;
+        width: 100%;
      }
      .section{
         width: 300px;
@@ -324,34 +340,57 @@ iframe:hover{
      footer{
         display: flex;
         flex-direction: column;
+        padding: 10px;
+        justify-content: center; 
+        font-size: 16px;
      }
   }
-
-.change{
+#mezmurs{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+    flex-grow: 1;
+}
+.line{
     display: flex;
-    flex-direction: row;
-    gap: 10px;
-    cursor: pointer;
+    
 }
-#a2{
-    display: none;
+.linelist{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
 }
-.change span{
+.mezmur{
+    margin: 10px;
+}
+.linelist .imputs{
+    width: 100%;
+    display: flex;
+    flex-grow: 2;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+.linelist input{
+    width: 60%;
     padding: 10px;
-    font-size: 19px;
-    width: 30px;
-    text-align: center;
-    font-weight: 700;
-    border: 1px solid #660066;
+    margin-left: 10px;
+    outline: none;
+    border: 3px solid #660066;
+    border-radius: 6px;
 }
-.change span:hover{
-    background-color: #660066;
-    color: white;
+.linelist button{
+    border-radius: 6px;
+    margin: 0;
 }
-.change span:nth-child(1){
-    background-color: #660066;
-    color: white; 
-}
-#a3{
-    display: none;
+#status{
+    background: white;
+    border-left: 5px solid #660066;
+    width: 80%;
+    margin: 5px;
+    padding: 5px;
 }
