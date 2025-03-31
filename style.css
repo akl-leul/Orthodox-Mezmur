@@ -1,396 +1,62 @@
-*{
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-}
-body{
-    background-color: #f2f2f2;
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
     padding: 0;
-    font-family: 'Open Sans', sans-serif;
-    box-sizing: border-box;
-    justify-content: center;
-    margin: 0;
 }
-header{
-    background-color: #fff;
-    width: 100%;
-    height: 5rem;
-    top: 0;
-    left: 0;
-    position: fixed;
-    box-shadow: 3px 3px 12px 0 #00699f;
-    overflow-y: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+header {
+    background-color: #3A3D5B;
+    color: white;
+    padding: 10px 20px;
 }
-header h1{
-    font-family: Georgia, serif; /* or Garamond, serif; or Open Sans, sans-serif; */
-    font-size: 24px;
-    color: #660066;
+
+header nav {
+    float: right;
 }
-header ul{
-    display: flex;
-    flex-direction: row;
-    gap: 50px;
-    justify-content: center;
-    font-size: 21px;
-    align-items: center;
-}
-header ul li a{
+
+header nav a {
+    color: white;
     text-decoration: none;
-    text-transform: uppercase;        
-}
-a {
-    color: #00698f;
-    font-weight: 500; 
-    transition: all 0.5s ease;/* change the color of links to a blue-green color */
-}
-header ul li a::after{
-    content:'';
-    position: absolute;
-    left: 0;
-    bottom: -7px;
-    width: 100%;
-    height: 3px;
-    background: #fff;
-    border-radius: 5px;
-    transform-origin: right;
-    transform: scaleX(0);
-    transition: transform .5s;
-}
-header ul li a:hover::after {
-     transform-origin: left;
-     transform: scaleX(1);
-  }
- 
- .sec{
-    display: flex; flex-direction: column;
- }
- #cont{
-    display: flex; flex-direction: row;
-    gap: 60px;
- }
-section{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-    color: #660066;
-}
-section .conatiner{
-    width: 60%;
-    padding: 12px;   
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; 
-}
-section .conatiner h2{
-    font-size: 30px;
-    margin-top: 50px;
-    margin-bottom: 30px;
-}
-h2 span {
-    color: #F8E231; /* or any other color you prefer */
-    text-decoration: double 2px #F8E231;
-}
-.conatiner p{
-    color: #000;
-    font-family: sans-serif;
-    font-weight: 900;
-}
-button{
-    background-color: #00699f;
-    color: #fff;
-    padding: 12px;
-    align-self: center;
-    text-align: center; 
-    width: 150px;
-    border: none;
-    cursor: pointer;
-    border-radius: 6px;
-    font-weight: 700;
-}
- 
- form input{
-    width: 400px;
-    padding: 10px;
-    outline: none;
-    border: none;
-    border-radius: 6px;
- }
- form label{
-    font-weight: 600;
-     
- }
- #contt{
-    max-width: 800px;
-    margin-left: 160px;
-    margin-right: 100px;
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-     
- }
- 
- form h1{
-    color: #F8E231;
- }
- form textarea{
-    width: 400px;
-    border: none;
-    outline: none;
-    padding: 10px;
-    height: 150px;
-    border-radius: 6px;
- }
-form input:focus,  form textarea:focus{
-    border: 2px solid #660066;
-}
-.section{
-    justify-content: center;
-    justify-self: center;
-    align-content: center;
-    margin-left: 30%;
-    text-align: center;
-    background-color: #00699f;
-    width: 500px;
-    height: 350px;
-    margin-top: 10%;
-    border-radius: 9px;
-    color: #f2f2f2;
-    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.458),
-    -5px -5px 15px rgba(247, 247, 247, 0.458);
-}
-.section p{ 
-    font-size: 30px;
-    font-weight: 900;
-    font-family: cursive;
-    text-shadow: 0 0 5px rgba(73, 72, 72, 0.458);
-}
-.container li span, p span{
-    font-weight: 900;
-    color: #F8E231;
-}
-footer{
-    display: flex;
-    flex-direction: row; 
-    background-color: #660066;
-    color: #f2f2f2;
-    justify-content: space-around;
-    align-items: start;
-    width: 100%;
-    padding-bottom: 20px; 
-}
-footer li{
-    list-style: none;
-}
-footer a{
-    list-style: circle;
-    text-decoration: none;
-    color: #fff;
-}
-footer a:hover{
-    color: #F8E231;
-}
-img{
-    transition: all 0.25s ease;
-    border-radius: 10px;
-    box-shadow: 0 0 21px rgba(73, 72, 72, 0.458);
-    z-index: -1;
-}
-
-.container div{
-    width: 400px;
-    border-radius: 6px;
-    box-shadow: 0 0 10px rgba(73, 72, 72, 0.458);
-    background: linear-gradient( to right bottom, rgba(239, 239, 239, 0.663), rgba(117, 117, 117, 0.458));
-    backdrop-filter: blur(9px);
-    -webkit-backdrop-filter: blur(8px);
-    text-align: center;
-    z-index: -1;
-}
-.container div h2{
-    font-size: 25px;
-}
-iframe {
-    margin-right: 10px;
-    margin-bottom: 20px;
-    border-radius: 12px;
-    box-shadow: 3px 3px 10px rgba(117, 117, 117, 0.458);
-    transition: all 0.5s ease;
-}
-iframe:hover{
-    box-shadow: 3px 3px 10px #00699f;
-    border: 2px solid #00699f;
-}
-.sidebar{
-position: fixed;
-top: 20px;
-  height: 100vh;   
-  z-index: 999;
-  background-color: rgba(190, 190, 190, 0.336);
-  box-shadow: 0px 0 10px rgba(0, 0, 0, 0.1);
-  display: none;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-start;
-  backdrop-filter: blur(10px);
-  font-size: 19px;
-}
-.sidebar li{
-    width: 80%;
-}
-
-.menu-btn{
-    display: none;float: right;
-    
-}
-@media (max-width: 768px){
-    .sidebar{
-        width: 100%;
-        padding: 10px;
-    }
-    .menu-btn{
-        display: flex;
-        
-    }
-}
-@media only screen and (max-width: 768px) {
-    /* For mobile phones: */
-    header{
-        height: fit-content;
-        justify-content: center;
-        width: 100%;
-        position: fixed;
-    } 
-    .menu-btn{
-        display: flex;
-    }
-     header h1{
-        font-size: 16px;
-     }
-    .hideOnMobile{
-        display: none;
-    }
-
-
-
-     section{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-        align-items: center;
-     }
-     section .conatiner{
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-     }
-     section .conatiner h2{
-        font-size: 19px;
-     }
-   
-     section img{
-        width: 100%; 
-     }
-     .container img{
-        width: 100%; 
-     }
-     
-     .sec{
-        width: 100%;
-     }
-    .sec #cont{
-        display: flex; 
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-     }
-     #cont div{
-        width: 98%;
-     }
-     form input, form textarea{
-        width: 90%;
-     }
-     form{
-        margin: 10px;
-     }
-      
-     .container{
-        float: left;
-        width: 100%;
-     }
-     .section{
-        width: 300px;
-        margin-left: 20px;
-        margin-top: 150px;
-     }
-     #conti{
-        width: 30px;
-     }
-     #contt{
-        width: 300px;
-        margin-left: 20px;
-        margin-bottom: 50px;
-     }
-     footer{
-        display: flex;
-        flex-direction: column;
-        padding: 10px;
-        justify-content: center; 
-        font-size: 16px;
-     }
-  }
-#mezmurs{
-    display: flex; 
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
-    flex-grow: 1;
-}
-.line{
-    display: flex;
-    
-}
-.linelist{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-.mezmur{
-    margin: 10px;
-}
-.linelist .imputs{
-    width: 100%;
-    display: flex;
-    flex-grow: 2;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 2%;
-}
-.linelist input{
-    width: 60%;
-    padding: 10px;
     margin-left: 10px;
-    outline: none;
-    border: 3px solid #660066;
-    border-radius: 6px;
 }
-.linelist button{
-    border-radius: 6px;
-    margin: 0;
+
+main {
+    padding: 20px;
 }
-#status{
-    background: white;
-    border-left: 5px solid #660066;
-    width: 80%;
-    margin: 5px;
-    padding: 5px;
+
+section {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #3A3D5B;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #FFD460;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF6B6B;
+}
+
+#blog-posts {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
 }
